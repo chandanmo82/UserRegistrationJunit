@@ -3,6 +3,6 @@
 /workspace.xml
 /.idea/
 /build.gradle
-/gradlew/
-/gradlew.bat
+/gradlew
+/gradlew.bat/
 /settings.gradle
