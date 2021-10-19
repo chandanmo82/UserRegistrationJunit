@@ -74,4 +74,14 @@ public class UserRegistrationTest {
         boolean passwordAtLeastOneNumber = UserRegistration.validatePassword("ubunturoot", UserRegistration.PASSWORD_AT_LEAST_ONE_Number);
         Assert.assertFalse(passwordAtLeastOneNumber);
     }
+    @Test
+    public void givenPasswordHasExactlyOneSymbol_WhenProper_ShouldReturnTrue() {
+        boolean passwordHasExactlyOneSymbol = UserRegistration.validatePassword("Ubuntu@root123", UserRegistration.PASSWORD_HAS_EXACTLY_ONE_SYMBOL);
+        Assert.assertTrue(passwordHasExactlyOneSymbol);
+    }
+    @Test
+    public void givenPasswordHasExactlyOneSymbol_WhenProper_ShouldReturnFalse() {
+        boolean passwordHasExactlyOneSymbol = UserRegistration.validatePassword("ubunturoot@123", UserRegistration.PASSWORD_HAS_EXACTLY_ONE_SYMBOL);
+        Assert.assertFalse(passwordHasExactlyOneSymbol);
+    }
 }
