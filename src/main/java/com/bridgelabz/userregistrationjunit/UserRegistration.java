@@ -5,6 +5,7 @@ public class UserRegistration {
     static String EMAIL_PATTERN = "^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$";
     static String MOBILE_NUMBER_PATTERN = "^[0-9]{1,3}[' '][0-9]{10}$";
     static String PASSWORD_AT_LEAST_EIGHT_CHARACTER_LONG="[a-z]{8,}";
+    static String PASSWORD_AT_LEAST_ONE_UPPERCASE_CHARACTER="(?=.*[a-z])(?=.*[A-Z]).{8,40}";
 
     public static boolean validInputName(String inputName) {
         return inputName.matches(NAME_PATTERN);
@@ -17,9 +18,12 @@ public class UserRegistration {
     public static boolean validateMobileNumber(String mobileNumber) {
         return mobileNumber.matches(MOBILE_NUMBER_PATTERN);
     }
-
     public static boolean validateEightCharacterLongPassword(String passwordAtLeastEightCharacterLong ) {
         return passwordAtLeastEightCharacterLong.matches(PASSWORD_AT_LEAST_EIGHT_CHARACTER_LONG);
+    }
+
+    public static boolean validatePassword(String passWord , String pattern) {
+        return passWord.matches(pattern);
     }
 
     public static void main(String[] args) {
