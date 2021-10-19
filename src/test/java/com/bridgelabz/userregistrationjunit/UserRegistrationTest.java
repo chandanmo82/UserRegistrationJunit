@@ -64,4 +64,14 @@ public class UserRegistrationTest {
         boolean passwordAtLeastOneUpperCaseCharacter = UserRegistration.validatePassword("ubunturoot", UserRegistration.PASSWORD_AT_LEAST_ONE_UPPERCASE_CHARACTER);
         Assert.assertFalse(passwordAtLeastOneUpperCaseCharacter);
     }
+    @Test
+    public void givenAtLeastNumberPassword_WhenProper_ShouldReturnTrue() {
+        boolean passwordAtLeastOneNumber = UserRegistration.validatePassword("Ubunturoot123", UserRegistration.PASSWORD_AT_LEAST_ONE_Number);
+        Assert.assertTrue(passwordAtLeastOneNumber);
+    }
+    @Test
+    public void givenAtLeastNumberPassword_WhenProper_ShouldReturnFalse() {
+        boolean passwordAtLeastOneNumber = UserRegistration.validatePassword("ubunturoot", UserRegistration.PASSWORD_AT_LEAST_ONE_Number);
+        Assert.assertFalse(passwordAtLeastOneNumber);
+    }
 }

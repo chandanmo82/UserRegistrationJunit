@@ -6,6 +6,7 @@ public class UserRegistration {
     static String MOBILE_NUMBER_PATTERN = "^[0-9]{1,3}[' '][0-9]{10}$";
     static String PASSWORD_AT_LEAST_EIGHT_CHARACTER_LONG="[a-z]{8,}";
     static String PASSWORD_AT_LEAST_ONE_UPPERCASE_CHARACTER="(?=.*[a-z])(?=.*[A-Z]).{8,40}";
+    static String PASSWORD_AT_LEAST_ONE_Number="((?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{8,40})";
 
     public static boolean validInputName(String inputName) {
         return inputName.matches(NAME_PATTERN);
